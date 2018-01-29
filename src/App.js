@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Icon } from 'antd-mobile';
-import styles from './App.css';
+import styles from './App.less';
 
 const customIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3">
