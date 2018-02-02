@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Icon } from 'antd-mobile';
 import styles from './App.less';
+import IndexPage from './indexPage/containers/indexPage';
 
 const customIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3">
@@ -16,15 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className={styles.App}>
-        <div className={styles['App-header']}>
-          <Icon type="success" size="lg"/>
-          <div style={{ width: 60, height:60 }}>{customIcon()}</div>
-          <h2>Welcome to React</h2>
-        </div>
-        <p className={styles['App-intro']}>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button type="primary">This is a button</Button>
+        <IndexPage />
       </div>
     );
   }
