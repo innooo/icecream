@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import styles from './App.less';
-import WrapperRouter from 'reactRouters/wrapperRouter';
+import TopnavRouter from './routers/topnavRouter';
 
 class App extends Component {
   render() {
     return (
-      <div className={styles.App}>
-        <WrapperRouter />
-      </div>
+      <TopnavRouter />
     );
   }
 }
-
 export default App;

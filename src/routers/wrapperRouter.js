@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BowserRouter as Router,
+  BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom';
@@ -10,10 +10,12 @@ class Wrapper extends Component {
   render() {
     return (
       <Router>
-        <Link to="/homepage">homepage</Link>
-        <Route path="/homepage" component={Homepage} />
+        <div>
+          <Link to="/homepage">homepage</Link>
+          <Route path="/homepage" component={Homepage} />
+        </div>
       </Router>
     );
   }
 }
-export default Homepage;
+export default Wrapper;

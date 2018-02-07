@@ -5,9 +5,9 @@ import Homepage from './../content/homepage';
 class HomepageCON extends Component {
   render() {
     return (
-      [
+      <div>
         <Homepage key="homepage" />
-      ]
+      </div>
     );
   }
 }
