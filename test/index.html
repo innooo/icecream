@@ -6,11 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>_a test</title>
   <script src="../ua.js"></script>
+  <script src="../jquery-2.0.3.js"></script>
 </head>
 <body>
-    
+    <button>test</button>
 </body>
 <script>
+  $('button').click(function() {
+    $.isFunction(function() {});
+  });
   _a().say().cry();
 </script>
 </html>

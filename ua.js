@@ -26,12 +26,27 @@ _a.fn.init.prototype = _a.fn;
 
 // ua中的扩展方法 可以用于扩展ua的接口，也可以拷贝对象
 _a.extend = _a.fn.extend = function() { // boolean, obj1, obj2 ...
-  var target = arguments[0] || {},
-      deep = false;
+  var target = arguments[0] || {}, // 拷贝的目标
+      i = 1, // 需要遍历的次数
+      length, // 参数个数
+      deep = false; // 深拷贝
   
   //判断是否为深拷贝
   if(typeof target == 'boolean') {
     deep = target;
     target = arguments[1] || {};
   }
+
+  // 如果target不是object
+  if(typeof target !== 'object') {
+    target = {};
+  }
+
+  // 如果只有一个参数
+  if(length === i) {
+    target = this;
+    --i;
+  }
+  
+  return target;
 }
