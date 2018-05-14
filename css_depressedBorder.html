@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Depressed border</title>
+    <style>
+        html {
+            font-size: 100%;
+        }
+        body {
+            font-size: 10px;
+        }
+        div , section, h3, p{
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --r: 40px;
+            --bc: #95a;
+            --mg: 6px;
+        }
+        article.wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 800px;
+            margin: 0 auto;
+            outline: #ccc solid 2px;
+        }
+        section.box {
+            width: 40%;
+            margin: 0.5em;
+        }
+        section.box h3 {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            font-size: 2em;
+            height: 4em;
+            color: #fff;
+            outline: #f0f solid 1px;
+        }
+        /* section.box h3::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: calc(var(--r) * 2);
+            height: calc(var(--r) * 2);
+            border-radius: 50%;
+            left: calc(var(--r) * (-1));
+            top: calc(var(--r) * (-1));
+            box-shadow: 0 0 0 50em rgba(153,85,170, 0.7);
+        } */
+        section.box p {
+            height: 5em;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            outline: red solid 1px;
+        }
+        section.box:nth-of-type(odd) p, section.box:nth-of-type(odd) h3 {
+            padding-right: var(--r);
+        }
+        section.box:nth-of-type(even) p, section.box:nth-of-type(even) h3 {
+            padding-left: var(--r);
+        }
+        section.box:nth-of-type(1) p::before, section.box:nth-of-type(2) p::before, section.box:nth-of-type(3) h3::before, section.box:nth-of-type(4) h3::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: calc(var(--r) * 2);
+            height: calc(var(--r) * 2);
+            border-radius: 50%;
+            box-shadow: 0 0 0 50em rgba(153,85,170, 0.7);
+        }
+        section.box:nth-of-type(1) p::before {
+            right: calc(var(--r) * (-1) - var(--mg));
+            bottom: calc(var(--r) * (-1) - var(--mg));
+        }
+        section.box:nth-of-type(2) p::before {
+            left: calc(var(--r) * (-1) - var(--mg));
+            bottom: calc(var(--r) * (-1) - var(--mg));
+        }
+        section.box:nth-of-type(3) h3::before {
+            right: calc(var(--r) * (-1) - var(--mg));
+            top: calc(var(--r) * (-1) - var(--mg));
+        }
+        section.box:nth-of-type(4) h3::before {
+            left: calc(var(--r) * (-1) - var(--mg));
+            top: calc(var(--r) * (-1) - var(--mg));
+        }
+    </style>
+</head>
+<body>
+    <article class="wrap">
+        <section class="box">
+            <h3 class="boxLeft">风暴之灵</h3>
+            <p></p>
+        </section>
+        <section class="box">
+            <h3 class="boxLeft">灰烬之灵</h3>
+            <p></p>
+        </section>
+        <section class="box">
+            <h3 class="boxRight">大地之灵</h3>
+            <p></p>
+        </section>
+        <section class="box">
+            <h3 class="boxRight">熊猫酒仙</h3>
+            <p></p>
+        </section>
+    </article>
+</body>
+</html>

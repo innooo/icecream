@@ -12,9 +12,19 @@
     <button>test</button>
 </body>
 <script>
-  $('button').click(function() {
-    $.isFunction(function() {});
+  var a = 1;
+  function test(cb) {
+    setTimeout(function() {
+      a++;
+      cb(); 
+    },1000);
+  }
+  
+  test(function() {
+    console.log(a);
   });
-  _a().say().cry();
+</script>
+<script>
+  console.log(a);
 </script>
 </html>
