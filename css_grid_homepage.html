@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home page</title>
+    <style>
+        html, body, header, div, article, section, aside, p {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            font-size: 1em;
+        }
+        :root {
+            --h_height: 3.75em;
+            --banner_height: 9.375em;
+            --content_height: 18.75em;
+            --f_height: 3.5em;
+            --empty_width: 6.25em;
+            --aside_width: 9.375em;
+        }
+        .container {
+            width: 100%;
+            overflow: auto;
+        }
+        .container {
+            display: grid;
+            grid-template:
+                [row1-start] "header header header header" 3.75em [row1-end]
+                [row2-start] "banner banner banner banner" 25em [row2-end]
+                [row3-start] ". content sidebar ." 1fr [row3-end]
+                [row4-start] "footer footer footer footer" 3.5em [row4-end]
+                / [first] 6.25em auto 9.375em 6.25em [end];
+        }
+        header {
+            grid-area: header;
+            background: #000;
+        }
+        .banner {
+            grid-area: banner;
+            background: #0ff;
+        }
+        article {
+            grid-area: content;
+            background: #f0f;
+            align-self: stretch;
+        }
+        aside {
+            grid-area: sidebar;
+            background: #95a;
+        }
+        footer {
+            grid-area: footer;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>header</header>
+        <div class="banner">banner</div>
+        <article>
+            content
+        </article>
+        <aside></aside>
+        <footer>
+            footer
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>text background</title>
+    <style>
+        html, body, div, span {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-size: 100%;
+            font-size: 1em;
+        }
+        .text { /* 实现字体颜色渐变的一种方法 （使用background-clip进行字体颜色填充）*/
+            width: 50em;
+            outline: #0ff solid 2px;
+            background: linear-gradient(to right, deeppink, dodgerblue);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .inline-text {
+            width: 25em;
+            outline: #ccc solid 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam placeat ex ratione atque expedita praesentium! Quod ad accusantium ipsam facilis illo fugiat ea possimus, accusamus quidem quisquam voluptatibus, quis hic!
+    </div>
+</body>
+</html>

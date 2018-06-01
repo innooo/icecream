@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS grid</title>
+    <style>
+        html, body, div, p {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-size: 1em;
+        }
+        .container {
+            width: 50em;
+            margin: 0.625em auto;
+            outline: #f0f solid 2px;
+            display: grid;
+        }
+        /* .container {
+            grid-template-columns: [first] 1fr [col1-end] 2.5em [line3] 5em [end]; 
+            grid-template-rows: [first] 3.125em [row1-end] 15em [row2-start] 3.75em [end];
+            grid-template-areas: 
+                "header header header" 
+                "main . sidebar"
+                "footer footer footer";
+        }  */
+       
+        /* 每一行的布局: 第一行包含 header header header 高度3.125em */
+        /* 列布局 ：总共有三列，宽度分别为： 1fr 2.5em 5em*/
+        
+        /*TODO 上下两种写法等价*/
+
+        .container {
+            grid-template: 
+                [row1-start] "header header header" 3.125em [row1-end]  
+                [row2-start] "main . sidebar" 15em [row2-end]
+                [row3-start] "footer footer footer" 3.75em [row3-end]
+                / [first] 1fr 2.5em 5em [end];
+            grid-column-gap: 0.25em; /* 列网格线的宽度 也可以理解为列area之间的间距 */
+            grid-row-gap: 0.5em; /* 行网格线的宽度 也可以理解为行area之间的间距 */
+            grid-gap: 0.5em 0.25em /* 和以上两个等价 */
+            justify-items: end;
+            align-items: center; /* 沿着列轴（即垂直方向）居中 默认为stretch 即铺满整个空间 */
+            justify-content: space-around;
+            grid-auto-flow: row;
+        }
+        .item {
+            outline: #95a solid 1px;
+        }
+        .item-1 {
+            grid-area: header;
+            align-self: end; /* 设置此grid-item的空间属性 占据的空间为垂直方向靠下 */
+        }
+        .item-2 {
+            grid-area: main;
+        }
+        .item-3 {
+            grid-area: sidebar;
+            justify-self: start;
+        }
+        .item-4 {
+            grid-area: footer;
+        }
+        .item-5 {
+            text-align: center;
+            word-break: break-word;
+        }
+        .sub-item {
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">item-1 <strong>header</strong></div>
+        <div class="item item-2">
+            item-2 <strong>main</strong>
+            <p class="sub-item"></p>
+        </div>
+        <div class="item item-3">item-3 <strong>sidebar</strong></div>
+        <div class="item item-4">item-4 <strong>footer</strong></div>
+        <!-- 按照排列多余的单元格会按照之前的格式依次填充，比如item-5 会填充到上面的空empty处 -->
+        <div class="item item-5">item-5 <strong>empty</strong></div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+        <div class="item item-11">item-11</div>
+    </div>
+</body>
+</html>
