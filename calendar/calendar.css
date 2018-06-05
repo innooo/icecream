@@ -1,0 +1,143 @@
+/*
+    
+*/
+
+html, body, table, tbody, thead, tr, th, td, div, ul, li {
+    margin: 0;
+    padding: 0;
+}
+ul, li, ol {
+    list-style: none;
+}
+.unis {
+    display: none;
+}
+.selected {
+    background: #999933;
+}
+.today {
+    outline: #ccc solid 1px;
+}
+.calendar_cell_hover:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, .4);
+}
+.calendar_wrap {
+    width: 500px;
+    margin: 10px auto;
+    position: relative;
+}
+.calendar_cellDetail {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,204,102,.85);
+}
+.calendar_cellDetail span {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+.calendar_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+.calendar_title {
+    width: 100%;
+    background: #00CC66;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    box-sizing: border-box;
+    padding-bottom: 15px;
+}
+.calendar_title_name {
+    color: #fff;
+}
+.calendar_title_panel {
+    display: flex;
+}
+.calendar_title_panel .calendar_title_panel_item {
+    position: relative;
+    z-index: 1;
+}
+.calendar_title_panel .calendar_title_panel_item .panel_list {
+    position: absolute;
+    left: -80px;
+    z-index: 2;
+    background: #fff;
+    border-radius: 3px;
+}
+.calendar_title_panel .calendar_title_panel_item .panel_list li {
+    width: 110px;
+    color: #666;
+    font-size: 12px;
+    padding: 5px;
+    cursor: pointer;
+}
+.calendar_title_panel .calendar_title_panel_item .panel_list li:hover {
+    background: #cecece;
+}
+.calendar_title_panel .panel_btn {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, .6);
+    color: #fff;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+}
+.calendar_title_panel .panel_btn:hover {
+    background: rgba(0, 0, 0, .4);
+}
+.calendar_content {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    background: #00CC66;
+    border-radius: 0 0 4px 4px;
+}
+.calendar_table {
+    width: 100%;
+}
+.calendar_table_arrow {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calendar_table_arrow li {
+    padding: 10px 0;
+    text-align: center;
+}
+.calendar_table_arrow li:nth-of-type(1), .calendar_table_arrow li:nth-of-type(3) {
+    width: 80px;
+}
+.calendar_table_arrow li:nth-of-type(2) {
+    flex: 1;
+}
+.calendar_table tr td {
+    color: #777;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+.calendar_table tr td:hover {
+    background: #009900;
+}
+.calendar_table .canlendar_table_cell_thisMonth {
+    color: #fff;
+}

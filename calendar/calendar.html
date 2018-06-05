@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日历</title>
+    <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+    <div class="calendar_wrap">
+        <div class="calendar_cellDetail unis">
+            <span id="JS_calendar_cellDetailBack"><<</span>
+        </div>
+        <div class="calendar_body" id="JS_calendar_body">
+            <div class="calendar_title">
+                <div class="calendar_title_name">日历</div>
+                <div class="calendar_title_panel">
+                    <div class="calendar_title_panel_item">
+                        <button class="panel_btn" id="JS_panel_menu">
+                            <i>1</i>
+                        </button>
+                        <ul class="panel_list unis" id="JS_panel_ul">
+                            <li>添加新活动</li>
+                            <li>清除事件</li>
+                            <li>查看日历</li>
+                        </ul>
+                    </div>
+                    <button class="calendar_title_panel_item panel_btn" id="JS_panel_mini">
+                        <i>2</i>
+                    </button>
+                    <button class="calendar_title_panel_item panel_btn" id="JS_panel_close">
+                        <i>3</i>
+                    </button>
+                </div>
+            </div>
+            <div class="calendar_content">
+                <ul class="calendar_table_arrow" id="JS_calendar_table_arrow">
+                    <li class="calendar_cell_hover"><</li>
+                    <li colspan="5" class="calendar_cell_hover"></li>
+                    <li class="calendar_cell_hover">></li>
+                </ul>
+                <table class="calendar_table" id="JS_calendar_table" cellspacing="0" cellpadding="0" height="300">
+                    <thead>
+                        <!-- <tr class="calendar_table_arrow" id="JS_calendar_table_arrow">
+                            <th class="calendar_cell_hover"><</th>
+                            <th colspan="5" class="calendar_cell_hover"></th>
+                            <th class="calendar_cell_hover">></th>
+                        </tr> -->
+                        <tr id="JS_calendar_day_bar">
+                            <th>日</th>
+                            <th>一</th>
+                            <th>二</th>
+                            <th>三</th>
+                            <th>四</th>
+                            <th>五</th>
+                            <th>六</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <!-- 使用脚本渲染日期 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script defer src="calendar.js"></script>
+</html>
