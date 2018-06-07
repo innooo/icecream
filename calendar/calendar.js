@@ -11,15 +11,25 @@ window.onload = function() {
         var Ocalendar_table_arrow = document.querySelector('#JS_calendar_table_arrow');
         var Ocalendar_day_bar = document.querySelector('#JS_calendar_day_bar');
 
-        var activeCell;
+        var activeCell, selectedCell;
         var renderFlag = 0; // 用于标识当前表格中需要渲染的是日期日历还是 年份 或是 月份 值为递增数值通过取余于3进行判断
 
-        activeCell = renderFirstCal(); // 记录当前月份
+        activeCell = renderFirstCal(); // 记录当前月份 用于渲染页面
 
         document.addEventListener('click', (e) => {
-            if(e.target.parentNode.id !== 'JS_panel_menu' &&e.target.id !== 'JS_panel_menu') {
-              Opanel_ul.classList.add('unis');  
+            var target = e.target;
+            if(target.parentNode.id !== 'JS_panel_menu' &&target.id !== 'JS_panel_menu') {
+              Opanel_ul.classList.add('unis');
             }
+            if(target.tagName.toUpperCase() === 'TD') {
+                selectedCell = {
+                    year: target.dataset.year || '',
+                    month: target.dataset.month || '',
+                    date: target.dataset.date || '',
+                    day: ''
+                }
+            }
+            console.log(selectedCell);
         });
         // 操作面板菜单按钮
         Opanel_menu.addEventListener('click', (e) => {
@@ -90,6 +100,7 @@ window.onload = function() {
         OcellDetailBack.addEventListener('click', (e) => {
             e.target.parentNode.classList.add('unis');
         });
+
         Ocalendar_body.addEventListener('click', (e) => {
             if(e.target.tagName && e.target.tagName.toUpperCase() === 'TD') {
                 var Ocalendar_date_cell = Ocalendar_table.querySelectorAll('td');
@@ -211,6 +222,7 @@ window.onload = function() {
                         calYear++;
                     }
                     td = document.createElement('td');
+                    td.dataset.year = calYear;
                     txt = document.createTextNode(calYear);
                     td.appendChild(txt);
                     tr.appendChild(td);
@@ -231,13 +243,14 @@ window.onload = function() {
                 for(var j = 1; j <= 4; j++) {
                     tmp++;
                     td = document.createElement('td');
+                    td.dataset.year = str.split('/')[0];
+                    td.dataset.month = tmp;
                     txt = document.createTextNode(monthList[tmp - 1]);
                     td.appendChild(txt);
                     tr.appendChild(td);
                     fragment.appendChild(tr);
                 }
             }
-            console.log(str);
             Ocalendar_table_arrow.querySelectorAll('li')[1].innerHTML = str.split('/').join('-');
             Ocalendar_table.querySelector('tbody').innerHTML = '';
             Ocalendar_table.querySelector('tbody').appendChild(fragment);
@@ -260,6 +273,10 @@ window.onload = function() {
                         theDay = nextDay(theDay);
                     }
                     td = document.createElement('td');
+                    td.dataset.year = year;
+                    td.dataset.month = theDay.split('/')[1];
+                    td.dataset.date = theDay.split('/')[2];
+
                     if(theDay.split('/')[1] === month) {
                         td.className = 'canlendar_table_cell_thisMonth';
                     }

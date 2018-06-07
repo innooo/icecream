@@ -1,0 +1,90 @@
+/* 
+*外层布局
+*/
+html, body {
+    font-size: 1em;
+}
+html, body, div, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+}
+ul, li, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.cr_pointer {
+    cursor: pointer;
+}
+.editor_wrap {
+    width: 31.25em;
+    margin: 0 auto;
+    outline: #ccc solid 1px;
+    padding: 0.3125em;
+}
+.editor_operate_wrap {
+    min-height: 2em;
+}
+.editor_content_wrap {
+    min-height: 18.75em;
+}
+/* 
+* 操作面板区域
+*/
+
+.editor_operate_main {
+    height: 2em;
+    background: #aaa;
+    display: flex;
+    align-items: center;
+}
+
+.editor_operate_btn {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 5px;
+    background: #fff;
+}
+
+.editor_operate_btn:hover {
+    background: #FFEBCD;
+    outline: #FFA54F solid 1px;
+}
+.editor_operate_btn.active, .editor_operate_btn_icon.active {
+    background: #FFDAB9;
+    outline: #FFA54F solid 1px;
+}
+.editor_operate_btn_icon {
+    height: 100%;
+    background-image: url(http://ueditor.baidu.com/ueditor/themes/default/images/icons.png);
+}
+
+    /*
+    * 图表背景图片位置
+    */
+.editor_operate_btn_icon_bold {
+    background-position: 0 0;
+}
+.editor_operate_btn_icon_italic {
+    background-position: -60px 0;
+}
+.editor_operate_btn_icon_underline {
+    background-position: -140px 0;
+}
+
+
+/*
+* 内容区域
+*/
+.editor_content_container {
+    height: 18.75em;
+    box-sizing: border-box;
+    background: #efefef;
+    outline: #cecece;
+    padding: 10px;
+}
+.editor_content_main {
+    height: calc(100% - 10px);
+    outline: none;
+}

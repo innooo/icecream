@@ -4,13 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>_a test</title>
-  <script src="../jquery-v1.10.1.js"></script>
+  <title>Document</title>
 </head>
 <body>
-    <button>test</button>
-</body>
+    <div id="wysiwyg" style="height: 100px;width: 300px;border:1px solid black" contenteditable>测试内容</div>
+<button data-name="justifyCenter">居中</button>
+<button data-name="justifyLeft">左对齐</button>
+<button data-name="justifyRight">右对齐</button>
+<button data-name="indent">添加缩进</button>
+<button data-name="outdent">去掉缩进</button>    
 <script>
-  
+var btns = document.getElementsByTagName('button');
+for(var i = 0; i < btns.length; i++){
+    btns[i].onclick = function(){
+        document.execCommand(this.getAttribute('data-name'));
+        console.log(typeof this.getAttribute('data-name'));
+    }
+}
 </script>
+</body>
 </html>
